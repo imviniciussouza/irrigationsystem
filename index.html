@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Dimensionamento de irrigação</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Bem vindos ao calculador de irrigação 1.0</h1>
+      <div class="blockOne">
+        <label for="sprinklers">Digite a quantidade de aspersores por setor
+          <input type="text" id="sprinklers">
+        </label>
+        <label for="sector">Informe a quantidade de setores
+          <input type="text" id="sector">
+        </label>
+        <label for="sectorAtOnce">Quantos setores irrigar por vez?
+          <input type="text" id="sectorAtOnce">
+        </label>
+        <label for="sectorLength">Informe o comprimento do setor
+          <input type="text" id="sectorLength">
+        </label>
+        <label for="sectorGauge">Informe a bitola do ramal setor</label>
+        <select class="sectorGauge">
+          <option value="22.6">25 mm (3/4)</option>
+          <option value="29">32 mm (1")</option>
+          <option value="46.7">50 mm (2")</option>
+          <option value="70.5">75 mm (3")</option>
+          <option value="94.4">100 mm (4")</option>
+          <option value="116">125 mm (5")</option>
+        </select>        
+        <label for="presure">Informe a pressão de trabalho
+          <input type="text" id="pressure" name="" placeholder="Por exemplo: 25 m.c.a" required>
+        </label> 
+        <label for="flow">Informe a vazão de trabalho
+          <input type="text" id="flow" name="" placeholder="Por exemplo: 840 L/H" required>
+        </label>
+        <label for="flowIndividual">Vazão de cada setor
+          <p id="flowIndidual"></p>
+        </label>
+        <label for="extSpeed">Velocidade da água no ramal
+          <p id="extSpeed"></p>
+        </label>        
+        <label for="flowAllSectors">Vazão total dos setores irrigados
+          <p id="flowAllSectors"></p>
+        </label>
+            <label for="pressureLossSector">Perda de carga na linha
+              <p id="pressureLossSector"></p>
+            </label>
+        <fieldset>
+            <legend>Informações da adutora</legend>
+            <label for="pipeline">Informe a comprimento da adutora
+              <input type="text" id="pipeline" name="" placeholder="100">
+            </label>
+            <label for="pipeGauge">Informe a bitola da adutora</label>
+            <select class="pipeGauge">
+              <option value="22.6">25 mm (3/4)</option>
+              <option value="29">32 mm (1")</option>
+              <option value="46.7">50 mm (2")</option>
+              <option value="70.5">75 mm (3")</option>
+              <option value="94.4">100 mm (4")</option>
+              <option value="116">125 mm (5")</option>
+            </select>
+            <label for="mainPipeSpeed">Velocidade na adutora
+              <p id="mainPipeSpeed"></p>
+            </label>
+            <label for="pressureLossPipe">Perda de carga na adutora
+              <p id="pressureLossPipe"></p>
+            </label>
+        </fieldset>
+        <fieldset>
+          <legend>Informação de bombeamento: recalque e succção</legend>
+            <label for="totalHeigth">Informe o desnível total
+              <input type="text" id="totalHeigth" name="" placeholder="Digite apenas números">
+            </label>
+          <label for="succtionH">Informe a altura de succção
+            <input type="text" id="succtionH" name="" placeholder="Digite apenas números" required>
+          </label>
+            <label for="succtionGauge">Informe a bitola do cano de succção</label>
+            <select class="succtionGauge">
+              <option value="22.6">25 mm (3/4)</option>
+              <option value="29">32 mm (1")</option>
+              <option value="46.7">50 mm (2")</option>
+              <option value="70.5">75 mm (3")</option>
+              <option value="94.4">100 mm (4")</option>
+              <option value="116">125 mm (5")</option>
+            </select>
+        <label for="succtionSpeed">Velocidade na succção
+          <p id="succtionSpeed"></p>
+        </label>
+        <label for="succtionPressureLoss">Perda de carga na succção
+          <p id="succtionPressureLoss"></p>
+        </label>     
+        </fieldset>
+        <fieldset>
+          <legend>Total de perdas</legend>
+          <label for="totalPressureLoss">Soma das perdas de carga</legend>
+          <p id="totalPressureLoss"></p>
+          <label for="ideaPump">Sua bomba ideal</legend>
+          <p id="idealPump"></p> 
+        </fieldset>
+      </div>
+
+      <button id="myBtn" type="submit" onclick="callAllFunctions()">submit</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
